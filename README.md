@@ -18,8 +18,8 @@
 
 - 🎮 **เล่นเกม (GitHub Pages):** `https://<ชื่อบัญชี-github>.github.io/<ชื่อ-repository>/`
 - 🎬 **คลิปวิดีโอสาธิตการเล่น:** `<ใส่ลิงก์ YouTube หรือ Google Drive ที่นี่>`
-- 💻 **GitHub Project:** `https://github.com/<ชื่อบัญชี-github>/<ชื่อ-repository>`
-
+- 💻 **GitHub Project:** [`https://github.com/<ชื่อบัญชี-github>/<ชื่อ-repository>`
+](https://github.com/dearpatchaa2005-glitch/Lab4-frozen-star)
 ---
 
 ## Game Story — เนื้อเรื่องย่อ

@@ -1,35 +1,35 @@
-[gd_scene load_steps=21 format=3 uid="uid://towe6jtciome"]
+[gd_scene format=4 uid="uid://towe6jtciome"]
 
-[ext_resource type="Script" path="res://Scenes/Levels/base_level.gd" id="1_script"]
-[ext_resource type="TileSet" path="res://Scenes/Prefabs/ground_tile_set.tres" id="2_tileset"]
-[ext_resource type="PackedScene" path="res://Scenes/Prefabs/level_finish_door.tscn" id="3_door"]
-[ext_resource type="PackedScene" path="res://Scenes/Actors/player.tscn" id="4_player"]
-[ext_resource type="PackedScene" path="res://Scenes/Levels/game_ui.tscn" id="5_ui"]
-[ext_resource type="AudioStream" path="res://Assets/Sound/walen.ogg" id="6_music"]
-[ext_resource type="Theme" path="res://Scenes/Prefabs/theme.tres" id="7_theme"]
-[ext_resource type="PackedScene" path="res://Scenes/Prefabs/icicle.tscn" id="e_icicle"]
-[ext_resource type="PackedScene" path="res://Scenes/Prefabs/star.tscn" id="e_star"]
+[ext_resource type="Script" uid="uid://cwm5w1bxx3js3" path="res://Scenes/Levels/base_level.gd" id="1_script"]
+[ext_resource type="TileSet" uid="uid://bvk6vx5i1riqd" path="res://Scenes/Prefabs/ground_tile_set.tres" id="2_tileset"]
+[ext_resource type="PackedScene" uid="uid://cyti38f0lagf2" path="res://Scenes/Prefabs/level_finish_door.tscn" id="3_door"]
+[ext_resource type="PackedScene" uid="uid://w7m6tehvvy3g" path="res://Scenes/Actors/player.tscn" id="4_player"]
+[ext_resource type="PackedScene" uid="uid://cdwabmqtlxr1y" path="res://Scenes/Levels/game_ui.tscn" id="5_ui"]
+[ext_resource type="AudioStream" uid="uid://dhmn57nc23ah1" path="res://Assets/Sound/walen.ogg" id="6_music"]
+[ext_resource type="Theme" uid="uid://d3eng5cvycmjf" path="res://Scenes/Prefabs/theme.tres" id="7_theme"]
+[ext_resource type="Texture2D" uid="uid://bec015ra87pjs" path="res://Assets/BG/cloudLayerB2.png" id="bg_far"]
+[ext_resource type="Texture2D" uid="uid://dkc8rdq3j7ppf" path="res://Assets/BG/mountainA.png" id="bg_near"]
 [ext_resource type="PackedScene" path="res://Scenes/Actors/bat.tscn" id="e_bat"]
-[ext_resource type="PackedScene" path="res://Scenes/Prefabs/coin.tscn" id="e_coin"]
-[ext_resource type="PackedScene" path="res://Scenes/Actors/monster_slim.tscn" id="e_slime"]
-[ext_resource type="PackedScene" path="res://Scenes/Prefabs/trap_spike.tscn" id="e_spike"]
+[ext_resource type="PackedScene" uid="uid://bfmh3fm2de78o" path="res://Scenes/Prefabs/coin.tscn" id="e_coin"]
 [ext_resource type="PackedScene" path="res://Scenes/Prefabs/falling_platform.tscn" id="e_fall"]
 [ext_resource type="PackedScene" path="res://Scenes/Prefabs/heart.tscn" id="e_heart"]
+[ext_resource type="PackedScene" path="res://Scenes/Prefabs/icicle.tscn" id="e_icicle"]
 [ext_resource type="PackedScene" path="res://Scenes/Prefabs/moving_platform.tscn" id="e_move"]
-[ext_resource type="PackedScene" path="res://Scenes/Actors/monster_mushroom.tscn" id="e_mush"]
-[ext_resource type="Texture2D" path="res://Assets/BG/cloudLayerB2.png" id="bg_far"]
-[ext_resource type="Texture2D" path="res://Assets/BG/mountainA.png" id="bg_near"]
+[ext_resource type="PackedScene" uid="uid://b48s52q3f64kl" path="res://Scenes/Actors/monster_mushroom.tscn" id="e_mush"]
+[ext_resource type="PackedScene" uid="uid://ek7hxkqp2wff" path="res://Scenes/Actors/monster_slim.tscn" id="e_slime"]
+[ext_resource type="PackedScene" path="res://Scenes/Prefabs/trap_spike.tscn" id="e_spike"]
+[ext_resource type="PackedScene" path="res://Scenes/Prefabs/star.tscn" id="e_star"]
 
-[node name="Level_03" type="Node2D"]
+[node name="Level_03" type="Node2D" unique_id=1544669248]
 script = ExtResource("1_script")
 level_name = "ด่านที่ 3: ใจกลางธารน้ำแข็ง"
 level_goal = "เก็บเศษดาวให้ครบทั้งหมด แล้วไปถึงประตูทางออกสุดท้าย"
 star_required = 9
 
-[node name="Sky" type="CanvasLayer" parent="."]
+[node name="Sky" type="CanvasLayer" parent="." unique_id=1296643526]
 layer = -100
 
-[node name="ColorRect" type="ColorRect" parent="Sky"]
+[node name="ColorRect" type="ColorRect" parent="Sky" unique_id=1874742049]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -37,186 +37,192 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.07, 0.11, 0.24, 1)
 
-[node name="Level" type="Node2D" parent="."]
+[node name="Level" type="Node2D" parent="." unique_id=446819244]
 
-[node name="Background1" type="Parallax2D" parent="Level"]
+[node name="Background1" type="Parallax2D" parent="Level" unique_id=1656820392]
 z_index = -10
 scroll_scale = Vector2(0.15, 0.15)
 repeat_size = Vector2(1024, 0)
 repeat_times = 6
 
-[node name="Sprite2D" type="Sprite2D" parent="Level/Background1"]
+[node name="Sprite2D" type="Sprite2D" parent="Level/Background1" unique_id=2043885203]
 modulate = Color(0.38, 0.5, 0.75, 1)
-centered = false
 position = Vector2(0, 100)
 texture = ExtResource("bg_far")
+centered = false
 
-[node name="Background2" type="Parallax2D" parent="Level"]
+[node name="Background2" type="Parallax2D" parent="Level" unique_id=1146057577]
 z_index = -10
 scroll_scale = Vector2(0.45, 0.45)
 repeat_size = Vector2(1024, 0)
 repeat_times = 6
 
-[node name="Sprite2D" type="Sprite2D" parent="Level/Background2"]
+[node name="Sprite2D" type="Sprite2D" parent="Level/Background2" unique_id=1129599955]
 modulate = Color(0.38, 0.5, 0.75, 1)
-centered = false
 position = Vector2(0, 250)
 texture = ExtResource("bg_near")
+centered = false
 
-[node name="Ground" type="TileMapLayer" parent="Level"]
+[node name="Ground" type="TileMapLayer" parent="Level" unique_id=1560960125]
 modulate = Color(0.8, 0.88, 1, 1)
 tile_map_data = PackedByteArray("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")
 tile_set = ExtResource("2_tileset")
 
-[node name="Player" parent="." instance=ExtResource("4_player")]
+[node name="Player" parent="." unique_id=1276148118 instance=ExtResource("4_player")]
 unique_name_in_owner = true
 z_index = 1
 position = Vector2(160, 672)
 double_jump = true
 
-[node name="LevelFinishDoor" parent="." instance=ExtResource("3_door")]
+[node name="LevelFinishDoor" parent="." unique_id=2113192960 instance=ExtResource("3_door")]
 z_index = 1
 position = Vector2(4128, 672)
 is_final_door = true
 
-[node name="Items" type="Node2D" parent="."]
+[node name="Items" type="Node2D" parent="." unique_id=1935618602]
 z_index = 2
 
-[node name="Star" parent="Items" instance=ExtResource("e_star")]
+[node name="Star" parent="Items" unique_id=30273875 instance=ExtResource("e_star")]
 position = Vector2(1120, 288)
 
-[node name="Star2" parent="Items" instance=ExtResource("e_star")]
+[node name="Star2" parent="Items" unique_id=1148252401 instance=ExtResource("e_star")]
 position = Vector2(2336, 288)
 
-[node name="Star3" parent="Items" instance=ExtResource("e_star")]
+[node name="Star3" parent="Items" unique_id=1826349955 instance=ExtResource("e_star")]
 position = Vector2(2976, 288)
 
-[node name="Star4" parent="Items" instance=ExtResource("e_star")]
+[node name="Star4" parent="Items" unique_id=896881090 instance=ExtResource("e_star")]
 position = Vector2(3680, 288)
 
-[node name="Star5" parent="Items" instance=ExtResource("e_star")]
+[node name="Star5" parent="Items" unique_id=6143349 instance=ExtResource("e_star")]
 position = Vector2(416, 480)
 
-[node name="Star6" parent="Items" instance=ExtResource("e_star")]
+[node name="Star6" parent="Items" unique_id=1677815430 instance=ExtResource("e_star")]
 position = Vector2(1504, 480)
 
-[node name="Star7" parent="Items" instance=ExtResource("e_star")]
+[node name="Star7" parent="Items" unique_id=965059144 instance=ExtResource("e_star")]
 position = Vector2(2720, 480)
 
-[node name="Star8" parent="Items" instance=ExtResource("e_star")]
+[node name="Star8" parent="Items" unique_id=1203088331 instance=ExtResource("e_star")]
 position = Vector2(3360, 480)
 
-[node name="Star9" parent="Items" instance=ExtResource("e_star")]
+[node name="Star9" parent="Items" unique_id=1809941109 instance=ExtResource("e_star")]
 position = Vector2(3936, 480)
 
-[node name="Coin" parent="Items" instance=ExtResource("e_coin")]
+[node name="Coin" parent="Items" unique_id=644041454 instance=ExtResource("e_coin")]
 position = Vector2(352, 672)
 
-[node name="Coin2" parent="Items" instance=ExtResource("e_coin")]
+[node name="Coin2" parent="Items" unique_id=1329508278 instance=ExtResource("e_coin")]
 position = Vector2(1056, 672)
 
-[node name="Heart" parent="Items" instance=ExtResource("e_heart")]
+[node name="Heart" parent="Items" unique_id=715568396 instance=ExtResource("e_heart")]
 position = Vector2(1376, 672)
 
-[node name="Coin3" parent="Items" instance=ExtResource("e_coin")]
+[node name="Coin3" parent="Items" unique_id=1441696058 instance=ExtResource("e_coin")]
 position = Vector2(1504, 672)
 
-[node name="Coin4" parent="Items" instance=ExtResource("e_coin")]
+[node name="Coin4" parent="Items" unique_id=718676523 instance=ExtResource("e_coin")]
 position = Vector2(1952, 672)
 
-[node name="Coin5" parent="Items" instance=ExtResource("e_coin")]
+[node name="Coin5" parent="Items" unique_id=529735409 instance=ExtResource("e_coin")]
 position = Vector2(2592, 672)
 
-[node name="Heart2" parent="Items" instance=ExtResource("e_heart")]
+[node name="Heart2" parent="Items" unique_id=1547323031 instance=ExtResource("e_heart")]
 position = Vector2(3232, 672)
 
-[node name="Coin6" parent="Items" instance=ExtResource("e_coin")]
+[node name="Coin6" parent="Items" unique_id=597070384 instance=ExtResource("e_coin")]
 position = Vector2(3552, 672)
 
-[node name="Coin7" parent="Items" instance=ExtResource("e_coin")]
+[node name="Coin7" parent="Items" unique_id=1886460993 instance=ExtResource("e_coin")]
 position = Vector2(4000, 672)
 
-[node name="Enemies" type="Node2D" parent="."]
+[node name="Enemies" type="Node2D" parent="." unique_id=178871978]
 
-[node name="Bat" parent="Enemies" instance=ExtResource("e_bat")]
+[node name="Bat" parent="Enemies" unique_id=1896453680 instance=ExtResource("e_bat")]
 position = Vector2(1248, 352)
+drift_amplitude = 0.0
+drift_speed = 0.8
 
-[node name="Bat2" parent="Enemies" instance=ExtResource("e_bat")]
+[node name="Bat2" parent="Enemies" unique_id=416270497 instance=ExtResource("e_bat")]
 position = Vector2(2464, 352)
+drift_amplitude = 0.0
+drift_speed = 0.8
 
-[node name="Bat3" parent="Enemies" instance=ExtResource("e_bat")]
+[node name="Bat3" parent="Enemies" unique_id=2040508310 instance=ExtResource("e_bat")]
 position = Vector2(608, 416)
+drift_amplitude = 0.0
+drift_speed = 0.8
 
-[node name="Bat4" parent="Enemies" instance=ExtResource("e_bat")]
+[node name="Bat4" parent="Enemies" unique_id=214922534 instance=ExtResource("e_bat")]
 position = Vector2(1824, 416)
+drift_amplitude = 0.0
+drift_speed = 0.8
 
-[node name="Bat5" parent="Enemies" instance=ExtResource("e_bat")]
+[node name="Bat5" parent="Enemies" unique_id=1057295651 instance=ExtResource("e_bat")]
 position = Vector2(3104, 416)
+drift_amplitude = 0.0
+drift_speed = 0.8
 
-[node name="Bat6" parent="Enemies" instance=ExtResource("e_bat")]
+[node name="Bat6" parent="Enemies" unique_id=250664804 instance=ExtResource("e_bat")]
 position = Vector2(3680, 544)
+drift_amplitude = 0.0
+drift_speed = 0.8
 
-[node name="Slime" parent="Enemies" instance=ExtResource("e_slime")]
+[node name="Slime" parent="Enemies" unique_id=1412089448 instance=ExtResource("e_slime")]
 position = Vector2(736, 662)
 
-[node name="Slime2" parent="Enemies" instance=ExtResource("e_slime")]
+[node name="Slime2" parent="Enemies" unique_id=1262862102 instance=ExtResource("e_slime")]
 position = Vector2(2144, 662)
 
-[node name="Mushroom" parent="Enemies" instance=ExtResource("e_mush")]
+[node name="Mushroom" parent="Enemies" unique_id=1176474902 instance=ExtResource("e_mush")]
 position = Vector2(2784, 662)
 
-[node name="Slime3" parent="Enemies" instance=ExtResource("e_slime")]
+[node name="Slime3" parent="Enemies" unique_id=176175103 instance=ExtResource("e_slime")]
 position = Vector2(3424, 662)
 
-[node name="Traps" type="Node2D" parent="."]
+[node name="Traps" type="Node2D" parent="." unique_id=1481820739]
 
-[node name="Icicle" parent="Traps" instance=ExtResource("e_icicle")]
+[node name="Icicle" parent="Traps" unique_id=1915161610 instance=ExtResource("e_icicle")]
 position = Vector2(864, 96)
 
-[node name="Icicle2" parent="Traps" instance=ExtResource("e_icicle")]
+[node name="Icicle2" parent="Traps" unique_id=1987098662 instance=ExtResource("e_icicle")]
 position = Vector2(1504, 96)
 
-[node name="Icicle3" parent="Traps" instance=ExtResource("e_icicle")]
-position = Vector2(2080, 96)
-
-[node name="Icicle4" parent="Traps" instance=ExtResource("e_icicle")]
+[node name="Icicle4" parent="Traps" unique_id=428591408 instance=ExtResource("e_icicle")]
 position = Vector2(2720, 96)
 
-[node name="Icicle5" parent="Traps" instance=ExtResource("e_icicle")]
+[node name="Icicle5" parent="Traps" unique_id=931388671 instance=ExtResource("e_icicle")]
 position = Vector2(3360, 96)
 
-[node name="Icicle6" parent="Traps" instance=ExtResource("e_icicle")]
-position = Vector2(3936, 96)
-
-[node name="Spike" parent="Traps" instance=ExtResource("e_spike")]
+[node name="Spike" parent="Traps" unique_id=184219056 instance=ExtResource("e_spike")]
 position = Vector2(928, 672)
 
-[node name="FallPlatform" parent="Traps" instance=ExtResource("e_fall")]
+[node name="FallPlatform" parent="Traps" unique_id=12538954 instance=ExtResource("e_fall")]
 position = Vector2(1248, 672)
 
-[node name="Spike2" parent="Traps" instance=ExtResource("e_spike")]
+[node name="Spike2" parent="Traps" unique_id=970686410 instance=ExtResource("e_spike")]
 position = Vector2(1632, 672)
 
-[node name="MovePlatform" parent="Traps" instance=ExtResource("e_move")]
+[node name="MovePlatform" parent="Traps" unique_id=633520002 instance=ExtResource("e_move")]
 position = Vector2(1824, 672)
 move_offset = Vector2(0, -224)
 speed = 70.0
 
-[node name="Spike3" parent="Traps" instance=ExtResource("e_spike")]
+[node name="Spike3" parent="Traps" unique_id=1790301743 instance=ExtResource("e_spike")]
 position = Vector2(2272, 672)
 
-[node name="Spike4" parent="Traps" instance=ExtResource("e_spike")]
+[node name="Spike4" parent="Traps" unique_id=810911302 instance=ExtResource("e_spike")]
 position = Vector2(2912, 672)
 
-[node name="FallPlatform2" parent="Traps" instance=ExtResource("e_fall")]
+[node name="FallPlatform2" parent="Traps" unique_id=1854999670 instance=ExtResource("e_fall")]
 position = Vector2(3680, 672)
 
-[node name="Spike5" parent="Traps" instance=ExtResource("e_spike")]
+[node name="Spike5" parent="Traps" unique_id=1675847813 instance=ExtResource("e_spike")]
 position = Vector2(3808, 672)
 
-[node name="UserInterface" parent="." instance=ExtResource("5_ui")]
+[node name="UserInterface" parent="." unique_id=493203405 instance=ExtResource("5_ui")]
 
-[node name="Label" type="Label" parent="UserInterface"]
+[node name="Label" type="Label" parent="UserInterface" unique_id=255956410]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -234,7 +240,7 @@ text = "ด่านที่ 3: ใจกลางธารน้ำแข็�
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1245188577]
 stream = ExtResource("6_music")
 bus = &"music"
 

@@ -1,0 +1,180 @@
+[gd_scene format=4 uid="uid://dekkdb3a0eifd"]
+
+[ext_resource type="Script" uid="uid://cwm5w1bxx3js3" path="res://Scenes/Levels/base_level.gd" id="1_script"]
+[ext_resource type="TileSet" uid="uid://bvk6vx5i1riqd" path="res://Scenes/Prefabs/ground_tile_set.tres" id="2_tileset"]
+[ext_resource type="PackedScene" uid="uid://cyti38f0lagf2" path="res://Scenes/Prefabs/level_finish_door.tscn" id="3_door"]
+[ext_resource type="PackedScene" uid="uid://w7m6tehvvy3g" path="res://Scenes/Actors/player.tscn" id="4_player"]
+[ext_resource type="PackedScene" uid="uid://cdwabmqtlxr1y" path="res://Scenes/Levels/game_ui.tscn" id="5_ui"]
+[ext_resource type="AudioStream" uid="uid://dhmn57nc23ah1" path="res://Assets/Sound/walen.ogg" id="6_music"]
+[ext_resource type="Theme" uid="uid://d3eng5cvycmjf" path="res://Scenes/Prefabs/theme.tres" id="7_theme"]
+[ext_resource type="Texture2D" uid="uid://bwsqehu7kq7cj" path="res://Assets/BG/cloudLayer1.png" id="bg_far"]
+[ext_resource type="Texture2D" uid="uid://tvq4stxhvl8u" path="res://Assets/BG/mountains.png" id="bg_near"]
+[ext_resource type="PackedScene" uid="uid://bfmh3fm2de78o" path="res://Scenes/Prefabs/coin.tscn" id="e_coin"]
+[ext_resource type="PackedScene" path="res://Scenes/Prefabs/heart.tscn" id="e_heart"]
+[ext_resource type="PackedScene" uid="uid://b48s52q3f64kl" path="res://Scenes/Actors/monster_mushroom.tscn" id="e_mush"]
+[ext_resource type="PackedScene" uid="uid://ek7hxkqp2wff" path="res://Scenes/Actors/monster_slim.tscn" id="e_slime"]
+[ext_resource type="PackedScene" path="res://Scenes/Prefabs/trap_spike.tscn" id="e_spike"]
+[ext_resource type="PackedScene" path="res://Scenes/Prefabs/star.tscn" id="e_star"]
+[ext_resource type="PackedScene" uid="uid://cppg5yoxwv0dy" path="res://Scenes/Levels/level_02.tscn" id="next_scene"]
+
+[node name="Level_01" type="Node2D" unique_id=156039513]
+script = ExtResource("1_script")
+level_name = "ด่านที่ 1: ทุ่งหิมะขาว"
+level_goal = "เก็บเศษดาวให้ครบ แล้วเดินไปถึงประตูทางออก"
+star_required = 6
+
+[node name="Sky" type="CanvasLayer" parent="." unique_id=679790877]
+layer = -100
+
+[node name="ColorRect" type="ColorRect" parent="Sky" unique_id=1400935161]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.68, 0.83, 0.94, 1)
+
+[node name="Level" type="Node2D" parent="." unique_id=268024251]
+
+[node name="Background1" type="Parallax2D" parent="Level" unique_id=1878397798]
+z_index = -10
+scroll_scale = Vector2(0.15, 0.15)
+repeat_size = Vector2(1024, 0)
+repeat_times = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/Background1" unique_id=206698362]
+modulate = Color(0.92, 0.97, 1, 1)
+position = Vector2(0, 100)
+texture = ExtResource("bg_far")
+centered = false
+
+[node name="Background2" type="Parallax2D" parent="Level" unique_id=748890658]
+z_index = -10
+scroll_scale = Vector2(0.45, 0.45)
+repeat_size = Vector2(1024, 0)
+repeat_times = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/Background2" unique_id=1601767908]
+modulate = Color(0.92, 0.97, 1, 1)
+position = Vector2(0, 250)
+texture = ExtResource("bg_near")
+centered = false
+
+[node name="Ground" type="TileMapLayer" parent="Level" unique_id=1715413495]
+tile_map_data = PackedByteArray("AAAPAAQAAAACAAAAAAAQAAQAAAACAAAAAAARAAQAAAACAAAAAAAfAAQAAAACAAAAAAAgAAQAAAACAAAAAAAhAAQAAAACAAAAAAAEAAcAAAACAAAAAAAFAAcAAAACAAAAAAAGAAcAAAACAAAAAAALAAcAAAACAAAAAAAMAAcAAAACAAAAAAANAAcAAAACAAAAAAAUAAcAAAACAAAAAAAVAAcAAAACAAAAAAAWAAcAAAACAAAAAAAbAAcAAAACAAAAAAAcAAcAAAACAAAAAAAdAAcAAAACAAAAAAAkAAcAAAACAAAAAAAlAAcAAAACAAAAAAAmAAcAAAACAAAAAAAtAAcAAAACAAAAAAAuAAcAAAACAAAAAAAvAAcAAAACAAAAAAAAAAoAAAACAAAAAAABAAoAAAACAAAAAAACAAoAAAACAAAAAAADAAoAAAACAAAAAAAEAAoAAAACAAAAAAAFAAoAAAACAAAAAAAGAAoAAAACAAAAAAAJAAoAAAACAAAAAAAKAAoAAAACAAAAAAALAAoAAAACAAAAAAAMAAoAAAACAAAAAAANAAoAAAACAAAAAAAOAAoAAAACAAAAAAAPAAoAAAACAAAAAAASAAoAAAACAAAAAAATAAoAAAACAAAAAAAUAAoAAAACAAAAAAAVAAoAAAACAAAAAAAWAAoAAAACAAAAAAAZAAoAAAACAAAAAAAaAAoAAAACAAAAAAAbAAoAAAACAAAAAAAcAAoAAAACAAAAAAAdAAoAAAACAAAAAAAeAAoAAAACAAAAAAAfAAoAAAACAAAAAAAiAAoAAAACAAAAAAAjAAoAAAACAAAAAAAkAAoAAAACAAAAAAAlAAoAAAACAAAAAAAmAAoAAAACAAAAAAAnAAoAAAACAAAAAAAqAAoAAAACAAAAAAArAAoAAAACAAAAAAAsAAoAAAACAAAAAAAtAAoAAAACAAAAAAAuAAoAAAACAAAAAAAvAAoAAAACAAAAAAAwAAoAAAACAAAAAAAxAAoAAAACAAAAAAAyAAoAAAACAAAAAAAzAAoAAAACAAAAAAAAAAsAAAADAAAAAAABAAsAAAADAAAAAAACAAsAAAADAAAAAAADAAsAAAADAAAAAAAEAAsAAAADAAAAAAAFAAsAAAADAAAAAAAGAAsAAAADAAAAAAAJAAsAAAADAAAAAAAKAAsAAAADAAAAAAALAAsAAAADAAAAAAAMAAsAAAADAAAAAAANAAsAAAADAAAAAAAOAAsAAAADAAAAAAAPAAsAAAADAAAAAAASAAsAAAADAAAAAAATAAsAAAADAAAAAAAUAAsAAAADAAAAAAAVAAsAAAADAAAAAAAWAAsAAAADAAAAAAAZAAsAAAADAAAAAAAaAAsAAAADAAAAAAAbAAsAAAADAAAAAAAcAAsAAAADAAAAAAAdAAsAAAADAAAAAAAeAAsAAAADAAAAAAAfAAsAAAADAAAAAAAiAAsAAAADAAAAAAAjAAsAAAADAAAAAAAkAAsAAAADAAAAAAAlAAsAAAADAAAAAAAmAAsAAAADAAAAAAAnAAsAAAADAAAAAAAqAAsAAAADAAAAAAArAAsAAAADAAAAAAAsAAsAAAADAAAAAAAtAAsAAAADAAAAAAAuAAsAAAADAAAAAAAvAAsAAAADAAAAAAAwAAsAAAADAAAAAAAxAAsAAAADAAAAAAAyAAsAAAADAAAAAAAzAAsAAAADAAAAAAA=")
+tile_set = ExtResource("2_tileset")
+
+[node name="Player" parent="." unique_id=268291224 instance=ExtResource("4_player")]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(160, 608)
+double_jump = true
+
+[node name="LevelFinishDoor" parent="." unique_id=121886499 instance=ExtResource("3_door")]
+z_index = 1
+position = Vector2(3232, 608)
+next_scene = ExtResource("next_scene")
+
+[node name="Items" type="Node2D" parent="." unique_id=317252298]
+z_index = 2
+
+[node name="Star" parent="Items" unique_id=752374388 instance=ExtResource("e_star")]
+position = Vector2(1056, 224)
+
+[node name="Star2" parent="Items" unique_id=937908732 instance=ExtResource("e_star")]
+position = Vector2(2080, 224)
+
+[node name="Star3" parent="Items" unique_id=724302730 instance=ExtResource("e_star")]
+position = Vector2(352, 416)
+
+[node name="Star4" parent="Items" unique_id=1346584017 instance=ExtResource("e_star")]
+position = Vector2(1376, 416)
+
+[node name="Star5" parent="Items" unique_id=1246985911 instance=ExtResource("e_star")]
+position = Vector2(2400, 416)
+
+[node name="Star6" parent="Items" unique_id=1874307824 instance=ExtResource("e_star")]
+position = Vector2(2976, 416)
+
+[node name="Coin" parent="Items" unique_id=246726274 instance=ExtResource("e_coin")]
+position = Vector2(288, 608)
+
+[node name="Coin2" parent="Items" unique_id=852654203 instance=ExtResource("e_coin")]
+position = Vector2(416, 608)
+
+[node name="Coin3" parent="Items" unique_id=645741971 instance=ExtResource("e_coin")]
+position = Vector2(864, 608)
+
+[node name="Heart" parent="Items" unique_id=1255916128 instance=ExtResource("e_heart")]
+position = Vector2(1248, 608)
+
+[node name="Coin4" parent="Items" unique_id=2025541727 instance=ExtResource("e_coin")]
+position = Vector2(1696, 608)
+
+[node name="Coin5" parent="Items" unique_id=871558734 instance=ExtResource("e_coin")]
+position = Vector2(2272, 608)
+
+[node name="Coin6" parent="Items" unique_id=878901416 instance=ExtResource("e_coin")]
+position = Vector2(2464, 608)
+
+[node name="Heart2" parent="Items" unique_id=1198353198 instance=ExtResource("e_heart")]
+position = Vector2(2784, 608)
+
+[node name="Coin7" parent="Items" unique_id=1814843967 instance=ExtResource("e_coin")]
+position = Vector2(2912, 608)
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1066880250]
+
+[node name="Slime" parent="Enemies" unique_id=436485350 instance=ExtResource("e_slime")]
+position = Vector2(672, 598)
+
+[node name="Mushroom" parent="Enemies" unique_id=1510348356 instance=ExtResource("e_mush")]
+position = Vector2(1376, 598)
+
+[node name="Slime2" parent="Enemies" unique_id=1619881929 instance=ExtResource("e_slime")]
+position = Vector2(1824, 598)
+
+[node name="Slime3" parent="Enemies" unique_id=1469135244 instance=ExtResource("e_slime")]
+position = Vector2(2976, 598)
+
+[node name="Traps" type="Node2D" parent="." unique_id=1301565291]
+
+[node name="Spike" parent="Traps" unique_id=236029936 instance=ExtResource("e_spike")]
+position = Vector2(928, 608)
+
+[node name="Spike2" parent="Traps" unique_id=837193357 instance=ExtResource("e_spike")]
+position = Vector2(1952, 608)
+
+[node name="Spike3" parent="Traps" unique_id=525844995 instance=ExtResource("e_spike")]
+position = Vector2(2400, 608)
+
+[node name="Spike4" parent="Traps" unique_id=1180001298 instance=ExtResource("e_spike")]
+position = Vector2(3104, 608)
+
+[node name="UserInterface" parent="." unique_id=481500364 instance=ExtResource("5_ui")]
+
+[node name="Label" type="Label" parent="UserInterface" unique_id=179937567]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -45.0
+offset_right = 340.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_theme")
+theme_override_font_sizes/font_size = 54
+text = "ด่านที่ 1: ทุ่งหิมะขาว"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1356191528]
+stream = ExtResource("6_music")
+bus = &"music"
+
+[connection signal="hit_enemy" from="Player" to="." method="_on_player_hit_enemy"]
+[connection signal="hit_trap" from="Player" to="." method="_on_player_hit_trap"]
+[connection signal="finished" from="MusicPlayer" to="." method="_on_music_player_finished"]

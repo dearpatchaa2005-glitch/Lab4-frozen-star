@@ -1,0 +1,357 @@
+[gd_scene load_steps=10 format=3 uid="uid://cfrznstarhow1"]
+
+[ext_resource type="Theme" uid="uid://d3eng5cvycmjf" path="res://Scenes/Prefabs/theme.tres" id="1_theme"]
+[ext_resource type="PackedScene" uid="uid://puc4l62gx6et" path="res://Scenes/Prefabs/button_exit.tscn" id="2_back"]
+[ext_resource type="Texture2D" path="res://Assets/BG/cloudLayer1.png" id="3_cloud"]
+[ext_resource type="Texture2D" path="res://Assets/BG/mountains.png" id="4_mount"]
+[ext_resource type="Texture2D" path="res://Assets/Spritesheet/star.png" id="5_star"]
+[ext_resource type="Texture2D" path="res://Assets/Spritesheet/platformPack_tilesheet.png" id="6_tiles"]
+[ext_resource type="Texture2D" uid="uid://cs52s37v04q41" path="res://Assets/Icons/icons8-heart-48.png" id="7_heart"]
+[ext_resource type="Texture2D" uid="uid://piisp82qy5kj" path="res://Assets/Spritesheet/GemYellow.png" id="8_coin"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_key"]
+atlas = ExtResource("6_tiles")
+region = Rect2(448, 256, 64, 64)
+
+[node name="HowTo" type="Node2D"]
+
+[node name="Sky" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="ColorRect" type="ColorRect" parent="Sky"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.58, 0.78, 0.93, 1)
+
+[node name="Clouds" type="TextureRect" parent="Sky"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_cloud")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Mountains" type="TextureRect" parent="Sky"]
+anchors_preset = 12
+anchor_top = 0.42
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+texture = ExtResource("4_mount")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="UILayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="ColorRect" parent="UILayer/UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -296.0
+offset_right = 540.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.12, 0.26, 0.78)
+
+[node name="Title" type="Label" parent="UILayer/UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -286.0
+offset_right = 400.0
+offset_bottom = -234.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+theme_override_colors/font_color = Color(0.62, 0.89, 1, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.06, 0.16, 1)
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 40
+text = "วิธีเล่น"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ControlsTitle" type="Label" parent="UILayer/UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -226.0
+offset_right = -30.0
+offset_bottom = -196.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+theme_override_colors/font_color = Color(1, 0.86, 0.42, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.06, 0.16, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
+text = "การควบคุม"
+vertical_alignment = 1
+
+[node name="ControlsText" type="Label" parent="UILayer/UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -190.0
+offset_right = -30.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.06, 0.16, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 18
+text = "A หรือ ←   เดินซ้าย
+D หรือ →   เดินขวา
+Space / W / ↑   กระโดด (กดซ้ำได้ 2 ครั้ง)
+X   โจมตี
+กระโดดเหยียบหัวศัตรู เพื่อกำจัดศัตรู
+เล่นบนมือถือใช้ปุ่มบนหน้าจอได้"
+
+[node name="RulesTitle" type="Label" parent="UILayer/UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -226.0
+offset_right = 500.0
+offset_bottom = -196.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+theme_override_colors/font_color = Color(1, 0.86, 0.42, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.06, 0.16, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
+text = "กติกา"
+vertical_alignment = 1
+
+[node name="RulesText" type="Label" parent="UILayer/UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -190.0
+offset_right = 500.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.06, 0.16, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 18
+text = "มีพลังชีวิต 3 หัวใจ
+โดนศัตรู กับดัก หรือตกหลุม เสีย 1 หัวใจ
+พลังชีวิตหมด จะเริ่มด่านนั้นใหม่
+เก็บเศษดาวครบ ประตูทางออกจึงจะเปิด
+ระวังหินย้อยน้ำแข็งร่วงจากเพดานถ้ำ
+ผ่านครบทั้ง 3 ด่าน คือชนะเกม"
+
+[node name="ItemsTitle" type="Label" parent="UILayer/UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = 0.0
+offset_right = 500.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+theme_override_colors/font_color = Color(1, 0.86, 0.42, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.06, 0.16, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
+text = "ไอเท็มที่ต้องเก็บ"
+vertical_alignment = 1
+
+[node name="IconStar" type="TextureRect" parent="UILayer/UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -490.0
+offset_top = 38.0
+offset_right = -446.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_star")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextStar" type="Label" parent="UILayer/UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -432.0
+offset_top = 38.0
+offset_right = 500.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.06, 0.16, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 18
+text = "เศษดาว  เก็บให้ครบตามจำนวนที่แสดงมุมบนซ้าย ประตูทางออกจึงจะเปิด"
+vertical_alignment = 1
+
+[node name="IconKey" type="TextureRect" parent="UILayer/UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -490.0
+offset_top = 84.0
+offset_right = -446.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_key")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextKey" type="Label" parent="UILayer/UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -432.0
+offset_top = 84.0
+offset_right = 500.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.06, 0.16, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 18
+text = "กุญแจ  ใช้เปิดประตูที่ล็อกอยู่ในด่านที่ 2"
+vertical_alignment = 1
+
+[node name="IconHeart" type="TextureRect" parent="UILayer/UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -490.0
+offset_top = 130.0
+offset_right = -446.0
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_heart")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextHeart" type="Label" parent="UILayer/UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -432.0
+offset_top = 130.0
+offset_right = 500.0
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.06, 0.16, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 18
+text = "หัวใจ  เพิ่มพลังชีวิต 1 หน่วย (มีได้สูงสุด 3 ดวง)"
+vertical_alignment = 1
+
+[node name="IconCoin" type="TextureRect" parent="UILayer/UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -490.0
+offset_top = 176.0
+offset_right = -446.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_coin")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextCoin" type="Label" parent="UILayer/UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -432.0
+offset_top = 176.0
+offset_right = 500.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.06, 0.16, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 18
+text = "เหรียญ  เก็บเพื่อสะสมคะแนน"
+vertical_alignment = 1
+
+[node name="btnBack" parent="UILayer/UI" instance=ExtResource("2_back")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = 234.0
+offset_right = 80.0
+offset_bottom = 290.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back"

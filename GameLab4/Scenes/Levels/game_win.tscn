@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://b46lxwc5r3dy4"]
+
+[ext_resource type="Theme" uid="uid://d3eng5cvycmjf" path="res://Scenes/Prefabs/theme.tres" id="1_5l1gm"]
+[ext_resource type="PackedScene" uid="uid://puc4l62gx6et" path="res://Scenes/Prefabs/button_exit.tscn" id="2_81byk"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/end_screen.gd" id="9_endscr"]
+[ext_resource type="PackedScene" uid="uid://dekkdb3a0eifd" path="res://Scenes/Levels/level_01.tscn" id="9_lv1"]
+
+[node name="GameOver" type="Node2D" unique_id=826370530]
+script = ExtResource("9_endscr")
+is_win = true
+
+[node name="Title" type="Label" parent="." unique_id=1965507633]
+offset_left = 438.0
+offset_top = 225.0
+offset_right = 742.0
+offset_bottom = 269.0
+theme = ExtResource("1_5l1gm")
+theme_override_colors/font_color = Color(0.36862746, 0.9137255, 0.1882353, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 33
+text = "You Win"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="btnExit" parent="." unique_id=1633606001 instance=ExtResource("2_81byk")]
+offset_left = 438.0
+offset_top = 359.0
+offset_right = 564.0
+offset_bottom = 413.0
+text = "Exit to Menu"
+
+[node name="btnPlay" parent="." unique_id=1146872882 instance=ExtResource("2_81byk")]
+offset_left = 597.0
+offset_top = 359.0
+offset_right = 723.0
+offset_bottom = 413.0
+shortcut = null
+exitToScene = ExtResource("9_lv1")
+text = "Play Again"
+
+[node name="Summary" type="Label" parent="." unique_id=1500100001]
+offset_left = 380.0
+offset_top = 285.0
+offset_right = 800.0
+offset_bottom = 330.0
+theme = ExtResource("1_5l1gm")
+theme_override_colors/font_color = Color(1, 0.85, 0.3, 1)
+theme_override_colors/font_outline_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
+text = "คะแนนรวม 0        เหรียญ 0"
+horizontal_alignment = 1
+vertical_alignment = 1

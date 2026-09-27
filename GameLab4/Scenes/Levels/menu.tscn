@@ -1,0 +1,174 @@
+[gd_scene format=3 uid="uid://b6tvaxw54wsq0"]
+
+[ext_resource type="Script" uid="uid://tkynu7pd01lh" path="res://Scenes/Levels/menu.gd" id="1_hq2ph"]
+[ext_resource type="Texture2D" uid="uid://1ay25i0wdihg" path="res://Assets/Icons/cpkku_dark.png" id="2_7pnm7"]
+[ext_resource type="Texture2D" uid="uid://cdgognnt83s33" path="res://icon.svg" id="3_7pnm7"]
+[ext_resource type="Texture2D" path="res://Assets/BG/cloudLayer1.png" id="4_cloud"]
+[ext_resource type="Texture2D" path="res://Assets/BG/mountains.png" id="5_mount"]
+
+[node name="Node2D" type="Node2D" unique_id=827773846]
+script = ExtResource("1_hq2ph")
+
+[node name="Sky" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="ColorRect" type="ColorRect" parent="Sky"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.58, 0.78, 0.93, 1)
+
+[node name="Clouds" type="TextureRect" parent="Sky"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_cloud")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Mountains" type="TextureRect" parent="Sky"]
+anchors_preset = 12
+anchor_top = 0.42
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+texture = ExtResource("5_mount")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="UI" type="Control" parent="." unique_id=2061607031]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 6.0
+offset_right = 1141.0
+offset_bottom = 524.0
+
+[node name="btnStart" type="Button" parent="UI" unique_id=843125025]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -76.5
+offset_top = 158.0
+offset_right = 78.5
+offset_bottom = 210.0
+grow_horizontal = 2
+text = "Start"
+
+[node name="btnContinue" type="Button" parent="UI" unique_id=922351197]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -76.5
+offset_top = 220.0
+offset_right = 78.5
+offset_bottom = 272.0
+grow_horizontal = 2
+disabled = true
+text = "Continue"
+
+[node name="btnHowTo" type="Button" parent="UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -76.5
+offset_top = 282.0
+offset_right = 78.5
+offset_bottom = 334.0
+grow_horizontal = 2
+text = "How to Play"
+
+[node name="btnOption" type="Button" parent="UI" unique_id=606273451]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -77.0
+offset_top = 344.0
+offset_right = 78.0
+offset_bottom = 396.0
+grow_horizontal = 2
+text = "Option"
+
+[node name="btnCredit" type="Button" parent="UI" unique_id=378335107]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -76.5
+offset_top = 406.0
+offset_right = 78.5
+offset_bottom = 458.0
+grow_horizontal = 2
+text = "Credit"
+
+[node name="GameTitle" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -420.0
+offset_top = 24.0
+offset_right = 420.0
+offset_bottom = 116.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.04, 0.09, 0.24, 1)
+theme_override_constants/outline_size = 18
+theme_override_font_sizes/font_size = 70
+text = "FROZEN STAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubTitle" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -420.0
+offset_top = 112.0
+offset_right = 420.0
+offset_bottom = 150.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.99, 0.95, 0.72, 1)
+theme_override_colors/font_outline_color = Color(0.04, 0.09, 0.24, 1)
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 24
+text = "ตามหาเศษดาวที่ร่วงหล่น นำแสงอุ่นกลับคืนสู่ดินแดนน้ำแข็ง"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="btnExit" type="Button" parent="UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -76.5
+offset_top = 468.0
+offset_right = 78.5
+offset_bottom = 520.0
+grow_horizontal = 2
+text = "Exit"
+
+[node name="CpkkuDark" type="Sprite2D" parent="." unique_id=2047758235]
+position = Vector2(1006, 611)
+scale = Vector2(0.61328125, 0.6486486)
+texture = ExtResource("2_7pnm7")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1100858680]
+position = Vector2(1116, 609)
+scale = Vector2(0.35449257, 0.37304696)
+texture = ExtResource("3_7pnm7")
+
+[connection signal="pressed" from="UI/btnStart" to="." method="_on_btn_start_pressed"]
+[connection signal="pressed" from="UI/btnContinue" to="." method="_on_btn_continue_pressed"]
+[connection signal="pressed" from="UI/btnHowTo" to="." method="_on_btn_how_to_pressed"]
+[connection signal="pressed" from="UI/btnOption" to="." method="_on_btn_option_pressed"]
+[connection signal="pressed" from="UI/btnCredit" to="." method="_on_btn_credit_pressed"]
+[connection signal="pressed" from="UI/btnExit" to="." method="_on_btn_exit_pressed"]

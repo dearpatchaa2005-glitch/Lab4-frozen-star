@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="PackedScene" uid="uid://d27bcsmx82vfa" path="res://Scenes/Actors/enemy.tscn" id="1_base"]
+[ext_resource type="Script" path="res://Scenes/Actors/bat.gd" id="2_script"]
+[ext_resource type="Texture2D" path="res://Assets/Spritesheet/bat.png" id="3_tex"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bat0"]
+atlas = ExtResource("3_tex")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bat1"]
+atlas = ExtResource("3_tex")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bat2"]
+atlas = ExtResource("3_tex")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bat3"]
+atlas = ExtResource("3_tex")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bat"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bat0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bat1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bat2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bat3")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 8.0
+}]
+
+[node name="Bat" instance=ExtResource("1_base")]
+script = ExtResource("2_script")
+speed = 0.0
+hp = 30
+hp_max = 30
+atk = 5
+label = "Bat"
+gravity_scale = 0.0
+fly_amplitude = 110.0
+fly_speed = 1.6
+
+[node name="AnimateSprite" type="AnimatedSprite2D" parent="Sprite" index="0"]
+sprite_frames = SubResource("SpriteFrames_bat")
+animation = &"fly"
+autoplay = "fly"
